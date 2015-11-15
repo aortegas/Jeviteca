@@ -1,0 +1,14 @@
+
+<h6> </h6>
+<td><input ng-model="busqueda.$" placeholder="Buscar por..." /></td>
+<h6> </h6>
+<table class="table">
+    <th>Género</th>
+    <th>Albums</th>
+    <tbody>
+        <tr ng-repeat="genero in generos | filter:busqueda"
+            generos-items
+            genero-item="genero"></tr>
+    </tbody>
+</table>
+

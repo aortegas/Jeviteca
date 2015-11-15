@@ -1,0 +1,9 @@
+
+<tr>
+    <td>{{ ::bandaItem.name }}</td>
+    <td>{{ ::bandaItem.origin }}</td>
+    <td><p ng-repeat="member in bandaItem.members | orderBy : 'name'"> {{ member.name | Musico:member.instruments }} </p></td>
+
+    <!-- <td><span favorite-item id-entity="{{ band.id }}", entity="{{ 'band' }}"></span></td> -->
+    <!-- <td><span ranking-item id-entity="{{ band.id }}", entity="{{ 'band' }}" ></span></td> -->
+</tr>

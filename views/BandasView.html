@@ -1,0 +1,16 @@
+
+<h6> </h6>
+<td><input ng-model="busqueda.$" placeholder="Buscar por..." /></td>
+<h6> </h6>
+<table class="table">
+    <th>Banda</th>
+    <th>Origen</th>
+    <th>Músicos</th>
+    <tbody>
+    <tbody>
+        <tr ng-repeat="banda in bandas | filter:busqueda"
+            bandas-items
+            banda-item = "banda"
+            on-banda-click="irDetalleBanda(idBanda)"></tr>
+    </tbody>
+</table>

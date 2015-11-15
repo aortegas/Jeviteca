@@ -1,0 +1,23 @@
+
+<h6> </h6>
+<td><input ng-model="busqueda.$" placeholder="Buscar por..." /></td>
+<h6> </h6>
+<table class="table">
+    <th>Album</th>
+    <th></th>
+    <th>Banda</th>
+    <th>Género</th>
+    <th>Año</th>
+    <th>Favorito</th>
+    <tbody>
+        <!-- album-item="album" enlaza "albumItem" (del scope de la directiva) con album & albumes que serian
+        del scope padre $scope. En la vista template de la directiva se trabaja con albumItem -->
+        <tr ng-repeat="album in albumes | filter:busqueda"
+            albumes-items
+            album-item = "album"
+            valor-favorito = "obtenerFavorito(album.id)"
+            on-album-click="irDetalleAlbum(idAlbum)"></tr>
+    </tbody>
+</table>
+
+

@@ -1,0 +1,28 @@
+<article>
+    <h3> {{ ::banda.name }}</h3>
+    <h5> {{ ::banda.origin }} </h5>
+
+    <br>
+    <p><h5>Músicos</h5></p>
+    <hr style="color: #0056b2;" />
+    <p ng-repeat="member in banda.members | orderBy : 'name'"> {{ ::member.name | Musico:member.instruments }} </p>
+
+    <br>
+    <p><h5>Álbumes</h5></p>
+    <hr style="color: #0056b2;" />
+    <p ng-repeat="album in banda.albums | orderBy : 'year'"> {{ ::album.title | TituloAlbumDetalle:album.year }} </p>
+
+    <br>
+    <p><h5>Mas info...</h5></p>
+    <hr style="color: #0056b2;" />
+
+    <p>Mas info de: <a ng-href = "{{ enlaceWikipediaBanda(banda.name) }}" target="_blank">  {{ ::banda.name }} </a> en Wikipedia...</p>
+</article>
+
+<div>
+    <br>
+    <button class="btn btn-primary" ng-click="volver()">
+        <i class="glyphicon glyphicon-chevron-left"></i>
+        <span>Volver</span>
+    </button>
+</div>

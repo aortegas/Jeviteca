@@ -1,0 +1,15 @@
+
+<tr>
+    <td><img ng-src="data/{{ ::albumItem.image }}" ng-if="albumItem.image" alt="Imagen Álbum" width="64" class="img-rounded"/></td>
+    <td>{{ ::albumItem.title }}</td>
+    <td>{{ ::albumItem.band.name }}</td>
+    <td>{{ ::albumItem.genre.name}}</td>
+    <td>{{ ::albumItem.year }}</td>
+    <td>
+        <uib-rating
+                ng-model="valorFavorito"
+                max="5"
+                readonly="true">
+        </uib-rating>
+    </td>
+</tr>

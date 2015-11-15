@@ -1,0 +1,16 @@
+
+.titulo {
+    color: #337AB7;
+}
+
+table tbody tr:hover {
+    background: #f4f4f4;
+    cursor: pointer;
+    border-collapse: separate;
+}
+
+.canciones tr:hover {
+    background: #ffffff;
+    margin-left: 10px;
+}
+

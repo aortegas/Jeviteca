@@ -1,0 +1,36 @@
+<article>
+    <h3> {{ ::album.title | TituloAlbumDetalle:album.year }}</h3>
+    <h4> {{ ::album.band.name}} </h4>
+    <table  class="canciones">
+        <th><h5> Género: {{ ::album.genre.name}} </h5></th>
+        <th><h5>Canciones</h5></th>
+        <th><h5>Puntuar favorito:</h5></th>
+
+        <tbody>
+            <td valign="top" width="275"><img ng-src="data/{{ ::album.image }}" ng-if="album.image" alt="Imagen Álbum" width="225" class="img-rounded"/></td>
+            <td width="400"><p ng-repeat="track in album.tracklist"><a ng-href = "{{ enlaceYoutubeCancion(album.band.name, track) }}" target="_blank"> {{ track }} </a></p></td>
+
+
+
+            <td valign="top">
+                <uib-rating
+                        ng-model="valorFavorito"
+                        max="5"
+                        readonly="false"
+                        on-hover="seleccionFavorito(value)">
+                </uib-rating>
+            </td>
+
+
+
+        </tbody>
+    </table>
+</article>
+
+<div>
+    <button class="btn btn-primary" ng-click="volver()">
+        <i class="glyphicon glyphicon-chevron-left"></i>
+        <span>Volver</span>
+    </button>
+</div>
+

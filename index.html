@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Jeviteca</title>
+    <!-- Cargamos los estilos de Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+    <!-- Cargamos los estilos de la aplicación -->
+    <link rel="stylesheet" href="styles/jeviteca.css" />
+</head>
+<body ng-app="jeviteca">
+
+    <!-- Contenedor general de la aplicacion. -->
+    <div class="container">
+        <!-- Cabecera -->
+        <header>
+            <h1 class="titulo">Jeviteca</h1>
+            <h4>Alberto Ortega.<small> KeepCoding Startup Engineering Master Bootcamp II</small></h4>
+        </header>
+        <!-- Barra de navegacion -->
+        <nav ng-controller="BarraNavegacionCtrl">
+            <ul class="nav nav-tabs">
+                <!-- La directiva ngClass espera un objeto JSON donde las keys sean las clases CSS a usar,
+                y el valor de dichas keys la condición que hará que se use o no -->
+                <li role="presentation" ng-class="{ 'active': rutaEsAlbumes()}">
+                    <a href="#/albumes">Álbumes</a>
+                </li>
+                <li role="presentation" ng-class="{ 'active': rutaEsBandas()}">
+                    <a href="#/bandas">Bandas</a>
+                </li>
+                <li role="presentation" ng-class="{ 'active': rutaEsGeneros()}">
+                    <a href="#/generos">Géneros</a>
+                </li>
+            </ul>
+        </nav>
+        <!-- Definimos la seccion contenedora para las vistas con single view aplication -->
+        <section ng-view></section>
+    </div>
+
+    <!-- Cargamos la librería de AngularJS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular-route.min.js"></script>
+    <!-- Cargamos dependencias de terceros -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.14.3/ui-bootstrap-tpls.min.js"></script>
+    <!-- Cargar el app.js de la aplicacion -->
+    <script src="scripts/app.js"></script>
+    <!-- Cargamos los constants -->
+    <script src="scripts/constants/Properties.js"></script>
+    <!-- Cargamos los controladores -->
+    <script src="scripts/controllers/AlbumesCtrl.js"></script>
+    <script src="scripts/controllers/BandasCtrl.js"></script>
+    <script src="scripts/controllers/GenerosCtrl.js"></script>
+    <script src="scripts/controllers/BarraNavegacionCtrl.js"></script>
+    <script src="scripts/controllers/AlbumDetalleCtrl.js"></script>
+    <script src="scripts/controllers/BandaDetalleCtrl.js"></script>
+    <!-- Cargamos los servicios -->
+    <script src="scripts/services/AlbumesProvider.js"></script>
+    <script src="scripts/services/BandasProvider.js"></script>
+    <script src="scripts/services/GenerosProvider.js"></script>
+    <script src="scripts/services/Utilidades.js"></script>
+    <script src="scripts/services/GestionFavoritos.js"></script>
+    <!-- Cargamos las directivas -->
+    <script src="scripts/directives/albumesItems.js"></script>
+    <script src="scripts/directives/bandasItems.js"></script>
+    <script src="scripts/directives/generosItems.js"></script>
+    <!-- Cargamos los filtros -->
+    <script src="scripts/filters/Musico.js"></script>
+    <script src="scripts/filters/TituloAlbumDetalle.js"></script>
+
+</body>
+</html>
